@@ -1,0 +1,19 @@
+---
+en:
+  decidim:
+    slider:
+      tabs:
+        video_text:
+          settings:
+            title: Title
+            content: Content
+            cta: Call to Action
+            url: URL
+            video: Video
+
+    content_blocks:
+      slider:
+        tabs:
+          video_text: Video and Text
+        name: Slider
+        admin_menu: Homepage Slider

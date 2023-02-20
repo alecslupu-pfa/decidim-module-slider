@@ -1,1 +1,65 @@
 /* css for decidim_slider */
+@import "stylesheets/decidim/slider/motion-ui";
+@import "stylesheets/decidim/variables";
+@import "stylesheets/decidim/utils/settings";
+
+
+#slider-block {
+  .orbit-image {
+    position: relative;
+    height: rem-calc(400);
+
+    @include breakpoint(medium) {
+      height: rem-calc(375);
+    }
+
+    @include breakpoint(xxxlarge) {
+      height: rem-calc(420);
+    }
+  }
+}
+
+.orbit-next, .orbit-previous {
+
+  background-color: rgba($black, .15);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $orbit-control-background-hover;
+  }
+}
+
+.orbit-controls {
+  svg {
+    width: 1rem;
+
+    path {
+      stroke: #FFFFFF;
+    }
+  }
+}
+.orbit-bullets {
+  .control {
+    background-color: transparent;
+    border: double #000;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 0 0 0 1rem;
+    vertical-align: bottom;
+    border-radius: 0;
+
+    &.play {
+      background: #FF00FF;
+    }
+    &.pause {
+      background-color: transparent;
+      border-radius: 0;
+      border-color: transparent transparent transparent #000;
+      border-style: solid;
+      border-width: 0.6rem 0 0.6rem 1rem;
+    }
+  }
+}

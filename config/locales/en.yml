@@ -1,7 +1,16 @@
 ---
 en:
+
   decidim:
     slider:
+      homepage:
+        main:
+          slide_details: Slide Details
+          current_slide: Current Slide
+          previous_slide: Previous Slide
+          next_slide: Next Slide
+        settings:
+          upload_size: Upload Settings (MB)
       tabs:
         video_text:
           settings:

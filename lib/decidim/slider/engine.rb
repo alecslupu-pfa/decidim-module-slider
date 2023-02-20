@@ -17,8 +17,8 @@ module Decidim
 
       initializer "slider.register.homepage_block" do
         Decidim.content_blocks.register(:homepage, :slider) do |content_block|
-          content_block.cell = "decidim/slider/homepage"
-          content_block.settings_form_cell = "decidim/slider/homepage_settings"
+          content_block.cell = "decidim/slider/homepage/main"
+          content_block.settings_form_cell = "decidim/slider/homepage/settings"
 
           content_block.public_name_key = "decidim.content_blocks.slider.name"
 

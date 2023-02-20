@@ -12,7 +12,7 @@ module Decidim
 
         def update
           enforce_permission_to_update_resource
-
+          patch_organization
           ReorderContentBlocks.call(current_organization, content_block_scope, params[:ids_order], scoped_resource&.id) do
             on(:ok) do
               head :ok
@@ -28,6 +28,17 @@ module Decidim
         end
 
         private
+
+        def patch_organization
+          upload_size = Decidim::ContentBlock.published.where(
+            organization: current_organization,
+            manifest_name: :slider
+          ).last&.settings&.upload_size
+
+          if upload_size.present?
+            current_organization.settings.upload.maximum_file_size.default = upload_size
+          end
+        end
         def scoped_resource; end
 
         def available_manifests

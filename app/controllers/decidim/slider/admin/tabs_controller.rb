@@ -7,7 +7,7 @@ module Decidim
         layout "decidim/admin/settings"
 
         helper_method :content_block_create_success_text, :content_block_create_error_text
-
+        before_action :patch_organization
 
         # uncomment me when upgrading to Decidim 0.28
         # include Decidim::Admin::ContentBlocks::LandingPageContentBlocks
@@ -56,8 +56,8 @@ module Decidim
         def update
           enforce_permission_to_update_resource
 
-          @form = form(Decidim::Admin::ContentBlockForm).from_params(params)
           patch_organization
+          @form = form(Decidim::Admin::ContentBlockForm).from_params(params)
 
           UpdateContentBlock.call(@form, content_block, content_block_scope) do
             on(:ok) do
@@ -80,12 +80,15 @@ module Decidim
           "There was an error"
         end
 
-
-
         def patch_organization
-          content_block.organization.settings.upload.maximum_file_size.default = 500
-          # Decidim.content_blocks.for(:homepage).select{|a| a.name == :slider}.first.settings.attributes[:upload_size]
+          upload_size = Decidim::ContentBlock.published.where(
+            organization: current_organization,
+            manifest_name: :slider
+          ).last&.settings&.upload_size
 
+          if upload_size.present?
+            content_block.organization.settings.upload.maximum_file_size.default = upload_size
+          end
         end
 
         def submit_button_text

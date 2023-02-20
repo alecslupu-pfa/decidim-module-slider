@@ -27,8 +27,8 @@ module Decidim
         def call
           create_content_block
           broadcast(:ok)
-        rescue StandardError
-          broadcast(:invalid)
+        # rescue StandardError
+        #   broadcast(:invalid)
         end
 
         private

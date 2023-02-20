@@ -1,0 +1,20 @@
+<div class="<% if index.zero? %>is-active<% end %> orbit-slide">
+  <figure class="orbit-figure">
+
+    <div class="orbit-caption">
+      <% if text.present? || valid_link? %>
+        <% if text.present? %>
+          <div class="text-slide-wrapper">
+            <p class="orbit-text"> <%= text.presence %> </p>
+          </div>
+        <% end %>
+
+        <% if valid_link? %>
+          <%= link_to cta, url, class: "button action" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="orbit-image" style="background: url('<%= image_url %>') 0 0 no-repeat;"></div>
+  </figure>
+</div>

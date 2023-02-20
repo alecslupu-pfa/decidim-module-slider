@@ -1,0 +1,15 @@
+<select class="master-language-chooser">
+  <% locales.each do |l| %>
+    <option value="<%= l %>" <% if I18n.locale == l %>selected=""<% end %>><%= I18n.with_locale(l) { I18n.t("name", scope: "locale") } %></option>
+  <% end %>
+</select>
+
+<% form.fields_for :settings, form.object.settings do |settings_fields| %>
+  <%= settings_fields.translated :text_field, :text, label: t(".text") %>
+  <%= settings_fields.translated :text_field, :cta, label: t(".cta") %>
+  <%= settings_fields.translated :text_field, :url, label: t(".url") %>
+
+  <% form.fields_for :images, form.object.images do |images_fields| %>
+    <%= images_fields.upload :image, label: t(".image") %>
+  <% end %>
+<% end %>

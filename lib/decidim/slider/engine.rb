@@ -28,6 +28,30 @@ module Decidim
         end
       end
 
+      initializer "slider.register.tabs.image" do
+        Decidim.content_blocks.register(:slider_tabs, :image) do |content_block|
+          content_block.cell = "decidim/slider/tabs/image/main"
+          content_block.settings_form_cell = "decidim/slider/tabs/image/settings"
+          content_block.public_name_key = "decidim.content_blocks.slider.tabs.image"
+
+          content_block.images = [
+            {
+              name: :image,
+              uploader: "Decidim::Slider::ImageUploader"
+            }
+          ]
+
+          content_block.settings do |settings|
+            settings.attribute :text, type: :text, translated: true
+            settings.attribute :cta, type: :text, translated: true, required: false
+            settings.attribute :url, type: :text, translated: true, required: false
+            settings.attribute :focus_coordinates, type: :text, required: false, default: "50% 50%"
+            settings.attribute :focus_points, type: :text, required: false, default: "50% 50%"
+            settings.attribute :copyright, type: :text, required: true, default: ""
+          end
+        end
+      end
+
       initializer "slider.register.tabs.video" do
         Decidim.content_blocks.register(:slider_tabs, :video_text) do |content_block|
           content_block.cell = "decidim/slider/tabs/video_text/main"

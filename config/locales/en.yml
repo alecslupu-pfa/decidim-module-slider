@@ -12,6 +12,12 @@ en:
         settings:
           upload_size: Upload Settings (MB)
       tabs:
+        image:
+          settings:
+            text: Text
+            cta: Call to Action
+            url: URL
+            image: Image
         video_text:
           settings:
             title: Title
@@ -23,6 +29,7 @@ en:
     content_blocks:
       slider:
         tabs:
+          image: Image
           video_text: Video and Text
         name: Slider
         admin_menu: Homepage Slider

@@ -26,7 +26,11 @@ $(() => {
     });
 
     $(".orbit").on("beforeslidechange.zf.orbit", function (event, currentSlide, newSlide) {
-        currentSlide.find("video")[0].pause();
-        newSlide.find("video")[0].play();
+        if (currentSlide.find("video").length > 0){
+            currentSlide.find("video")[0].pause();
+        }
+        if (newSlide.find("video").length > 0){
+            newSlide.find("video")[0].play();
+        }
     });
 });

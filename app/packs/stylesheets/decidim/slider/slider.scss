@@ -17,6 +17,9 @@
       height: rem-calc(420);
     }
   }
+  .orbit-caption {
+    z-index: 10;
+  }
 }
 
 .orbit-next, .orbit-previous {

@@ -1,5 +1,5 @@
 <% if has_slides? %>
-  <div class="orbit" role="region" data-orbit>
+  <div class="orbit" role="region" data-orbit id="slider-block">
     <div class="orbit-wrapper">
       <div class="orbit-controls">
         <button class="orbit-previous"><span class="show-for-sr"><%= t(".previous_slide") %></span>
@@ -34,3 +34,9 @@
   <%= stylesheet_pack_tag "decidim_slider" %>
   <%= javascript_pack_tag "decidim_slider" %>
 <% end %>
+
+<script type="application/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+
+})
+</script>

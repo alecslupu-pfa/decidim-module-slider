@@ -86,7 +86,7 @@ module Decidim
             manifest_name: :slider
           ).last&.settings&.upload_size
 
-          if upload_size.present?
+          if upload_size.present? && content_block.present?
             content_block.organization.settings.upload.maximum_file_size.default = upload_size
           end
         end
@@ -135,6 +135,8 @@ module Decidim
 
         # Remove me when upgrading to Decidim 0.28
         def content_block
+          return unless params[:id]
+
           @content_block ||= content_blocks.find(params[:id])
         end
       end

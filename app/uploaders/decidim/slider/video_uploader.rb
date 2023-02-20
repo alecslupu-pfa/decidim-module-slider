@@ -2,7 +2,7 @@
 
 module Decidim
   module Slider
-    class VideoUploader < RecordImageUploader
+    class VideoUploader < ApplicationUploader
       def content_type_allowlist
         %w(video/mp4 application/mp4)
       end

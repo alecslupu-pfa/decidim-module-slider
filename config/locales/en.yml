@@ -1,35 +1,37 @@
 ---
 en:
-
   decidim:
-    slider:
-      homepage:
-        main:
-          slide_details: Slide Details
-          current_slide: Current Slide
-          previous_slide: Previous Slide
-          next_slide: Next Slide
-        settings:
-          upload_size: Upload Settings (MB)
-      tabs:
-        image:
-          settings:
-            text: Text
-            cta: Call to Action
-            url: URL
-            image: Image
-        video_text:
-          settings:
-            title: Title
-            content: Content
-            cta: Call to Action
-            url: URL
-            video: Video
-
     content_blocks:
       slider:
+        admin_menu: Homepage Slider
+        name: Slider
         tabs:
           image: Image
           video_text: Video and Text
-        name: Slider
-        admin_menu: Homepage Slider
+    slider:
+      homepage:
+        main:
+          show:
+            current_slide: Current Slide
+            next_slide: Next Slide
+            previous_slide: Previous Slide
+            slide_details: Slide Details
+        settings:
+          show:
+            upload_size: Upload Settings (MB)
+      tabs:
+        image:
+          settings:
+            show:
+              cta: Call to Action
+              image: Image
+              text: Text
+              url: URL
+        video_text:
+          settings:
+            show:
+              content: Content
+              cta: Call to Action
+              title: Title
+              url: URL
+              video: Video

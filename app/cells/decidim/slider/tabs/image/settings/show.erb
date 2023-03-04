@@ -1,6 +1,6 @@
 <select class="master-language-chooser">
   <% locales.each do |l| %>
-    <option value="<%= l %>" <% if I18n.locale == l %>selected=""<% end %>><%= I18n.with_locale(l) { I18n.t("name", scope: "locale") } %></option>
+    <option value="<%= l %>" <% if I18n.locale == l %>selected=""<% end %>><%= I18n.with_locale(l) { t("name", scope: "locale") } %></option>
   <% end %>
 </select>
 

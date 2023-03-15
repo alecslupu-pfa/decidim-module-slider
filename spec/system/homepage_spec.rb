@@ -13,6 +13,6 @@ describe "Homepage", type: :system do
   end
 
   it { expect(page).to have_content("foobar") }
-  it_behaves_like "accessible page"
 
+  it_behaves_like "accessible page"
 end

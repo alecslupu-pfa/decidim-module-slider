@@ -3,7 +3,6 @@
 require "decidim/core/test/factories"
 
 FactoryBot.define do
-
   factory :slider, parent: :content_block do
     manifest_name { :slider }
     scope_name { :homepage }
@@ -21,7 +20,7 @@ FactoryBot.define do
       {
         text: { Decidim.default_locale => generate(:title) },
         cta: { Decidim.default_locale => generate(:title) },
-        url: { Decidim.default_locale => Faker::Internet.url },
+        url: { Decidim.default_locale => Faker::Internet.url }
       }
     end
 

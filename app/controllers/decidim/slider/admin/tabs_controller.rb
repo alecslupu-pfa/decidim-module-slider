@@ -14,7 +14,6 @@ module Decidim
         # Remove me when upgrading to Decidim 0.28
         helper_method :content_block, :resource_landing_page_content_block_path, :scoped_resource, :submit_button_text
 
-
         def destroy
           enforce_permission_to_update_resource
 
@@ -64,7 +63,6 @@ module Decidim
               redirect_to edit_resource_landing_page_path
             end
             on(:invalid) do
-              raise @form.errors.inspect
               render "edit"
             end
           end
@@ -86,15 +84,12 @@ module Decidim
             manifest_name: :slider
           ).last&.settings&.upload_size
 
-          if upload_size.present? && content_block.present?
-            content_block.organization.settings.upload.maximum_file_size.default = upload_size
-          end
+          content_block.organization.settings.upload.maximum_file_size.default = upload_size if upload_size.present? && content_block.present?
         end
 
         def submit_button_text
           "Save"
         end
-
 
         def edit_resource_landing_page_path
           root_path
@@ -110,9 +105,6 @@ module Decidim
 
         def content_block_create_success_text
           "The content block has been created"
-        end
-        def content_block_create_error_text
-          "There was an error creating content block"
         end
 
         def scoped_resource; end

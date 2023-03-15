@@ -5,7 +5,6 @@ module Decidim
     module Admin
       # Delete me when upgrading to Decidim 0.28
       class ReorderContentBlocks < Decidim::Admin::ReorderContentBlocks
-
         private
 
         def set_new_weights
@@ -18,7 +17,6 @@ module Decidim
             content_block.update!(weight: weight) if content_block.present?
           end
         end
-
       end
     end
   end

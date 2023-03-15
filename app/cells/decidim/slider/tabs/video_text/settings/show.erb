@@ -5,13 +5,13 @@
 </select>
 
 <% form.fields_for :settings, form.object.settings do |settings_fields| %>
-  <%= settings_fields.translated :text_field, :title, label: t(".title") %>
-  <%= settings_fields.translated :text_field, :content, label: t(".content") %>
-  <%= settings_fields.translated :text_field, :cta, label: t(".cta") %>
-  <%= settings_fields.translated :text_field, :url, label: t(".url") %>
+  <%= settings_fields.translated :text_field, :title, label: t("decidim.slider.tabs.video_text.settings.title") %>
+  <%= settings_fields.translated :text_field, :content, label: t("decidim.slider.tabs.video_text.settings.content") %>
+  <%= settings_fields.translated :text_field, :cta, label: t("decidim.slider.tabs.video_text.settings.cta") %>
+  <%= settings_fields.translated :text_field, :url, label: t("decidim.slider.tabs.video_text.settings.url") %>
 
   <% form.fields_for :images, form.object.images do |images_fields| %>
-    <%= images_fields.upload :video, label: t(".video") %>
+    <%= images_fields.upload :video, label: t("decidim.slider.tabs.video_text.settings.video") %>
   <% end %>
 
 <% end %>

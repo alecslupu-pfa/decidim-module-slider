@@ -35,10 +35,9 @@ module Decidim
             manifest_name: :slider
           ).last&.settings&.upload_size
 
-          if upload_size.present?
-            current_organization.settings.upload.maximum_file_size.default = upload_size
-          end
+          current_organization.settings.upload.maximum_file_size.default = upload_size if upload_size.present?
         end
+
         def scoped_resource; end
 
         def available_manifests
@@ -87,7 +86,6 @@ module Decidim
           "Add Tabs"
         end
 
-
         def inactive_content_blocks_title
           "Inactive Tabs"
         end
@@ -95,7 +93,6 @@ module Decidim
         def resource_content_block_cell
           "decidim/slider/admin/administrable_content_block"
         end
-
 
         def enforce_permission_to_update_resource
           enforce_permission_to :update, :organization, organization: current_organization

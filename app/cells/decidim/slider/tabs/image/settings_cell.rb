@@ -18,7 +18,6 @@ module Decidim
                            Decidim.available_locales
                          end
           end
-
         end
       end
     end

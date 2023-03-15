@@ -4,8 +4,7 @@ module Decidim
   module Slider
     module Tabs
       module Image
-        class MainCell  < Decidim::ViewModel
-
+        class MainCell < Decidim::ViewModel
           def image_url
             model.images_container.attached_uploader(:image).path(variant: :big)
           end

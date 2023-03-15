@@ -36,7 +36,7 @@ FactoryBot.define do
     scope_name { :slider_tabs }
     settings do
       {
-        text: { Decidim.default_locale => generate(:title) },
+        content: { Decidim.default_locale => generate(:title) },
         title: { Decidim.default_locale => generate(:title) },
         cta: { Decidim.default_locale => generate(:title) },
         url: { Decidim.default_locale => Faker::Internet.url }

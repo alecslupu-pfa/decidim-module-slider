@@ -2,10 +2,11 @@
   <figure class="orbit-figure">
 
     <div class="orbit-caption">
-      <% if text.present? || valid_link? %>
-        <% if text.present? %>
+      <% if content.present? || valid_link? %>
+        <%= title.presence %>
+        <% if content.present? %>
           <div class="text-slide-wrapper">
-            <p class="orbit-text"> <%= text.presence %> </p>
+            <p class="orbit-text"> <%= content.presence %> </p>
           </div>
         <% end %>
 

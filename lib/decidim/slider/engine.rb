@@ -42,7 +42,8 @@ module Decidim
           ]
 
           content_block.settings do |settings|
-            settings.attribute :text, type: :text, translated: true
+            settings.attribute :title, type: :text, translated: true
+            settings.attribute :content, type: :text, translated: true
             settings.attribute :cta, type: :text, translated: true, required: false
             settings.attribute :url, type: :text, translated: true, required: false
           end

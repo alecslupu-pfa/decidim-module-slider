@@ -14,11 +14,11 @@ FactoryBot.define do
   end
 
   factory :image_tab, parent: :content_block do
-    manifest_name { :video_text }
+    manifest_name { :image }
     scope_name { :slider_tabs }
     settings do
       {
-        text: { Decidim.default_locale => generate(:title) },
+        content: { Decidim.default_locale => generate(:title) },
         cta: { Decidim.default_locale => generate(:title) },
         url: { Decidim.default_locale => Faker::Internet.url }
       }

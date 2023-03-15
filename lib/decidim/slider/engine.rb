@@ -45,9 +45,6 @@ module Decidim
             settings.attribute :text, type: :text, translated: true
             settings.attribute :cta, type: :text, translated: true, required: false
             settings.attribute :url, type: :text, translated: true, required: false
-            settings.attribute :focus_coordinates, type: :text, required: false, default: "50% 50%"
-            settings.attribute :focus_points, type: :text, required: false, default: "50% 50%"
-            settings.attribute :copyright, type: :text, required: true, default: ""
           end
         end
       end

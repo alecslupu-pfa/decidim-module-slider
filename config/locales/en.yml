@@ -11,27 +11,23 @@ en:
     slider:
       homepage:
         main:
-          show:
-            current_slide: Current Slide
-            next_slide: Next Slide
-            previous_slide: Previous Slide
-            slide_details: Slide Details
+          current_slide: Current Slide
+          next_slide: Next Slide
+          previous_slide: Previous Slide
+          slide_details: Slide Details
         settings:
-          show:
-            upload_size: Upload Settings (MB)
+          upload_size: Upload Settings (MB)
       tabs:
         image:
           settings:
-            show:
-              cta: Call to Action
-              image: Image
-              text: Text
-              url: URL
+            cta: Call to Action
+            image: Image
+            text: Text
+            url: URL
         video_text:
           settings:
-            show:
-              content: Content
-              cta: Call to Action
-              title: Title
-              url: URL
-              video: Video
+            content: Content
+            cta: Call to Action
+            title: Title
+            url: URL
+            video: Video

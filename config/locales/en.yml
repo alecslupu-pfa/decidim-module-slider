@@ -20,9 +20,10 @@ en:
       tabs:
         image:
           settings:
+            content: Text
             cta: Call to Action
             image: Image
-            text: Text
+            title: Title
             url: URL
         video_text:
           settings:

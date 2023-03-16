@@ -13,8 +13,12 @@ module Decidim
             context[:index]
           end
 
-          def text
-            translated_attribute(model.settings.text)
+          def title
+            translated_attribute(model.settings.title)
+          end
+
+          def content
+            translated_attribute(model.settings.content)
           end
 
           def cta

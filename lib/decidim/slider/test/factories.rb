@@ -24,10 +24,12 @@ FactoryBot.define do
       }
     end
 
-    after(:create) do |content_block, _evaluator|
-      background_image = Rack::Test::UploadedFile.new(File.expand_path(File.join(__dir__, "assets", "city.jpeg")), "image/jpeg")
-      content_block.images_container.image = background_image
-      content_block.save
+    trait :with_file do
+      after(:create) do |content_block, _evaluator|
+        background_image = Rack::Test::UploadedFile.new(File.expand_path(File.join(__dir__, "assets", "city.jpeg")), "image/jpeg")
+        content_block.images_container.image = background_image
+        content_block.save
+      end
     end
   end
 
@@ -42,11 +44,12 @@ FactoryBot.define do
         url: { Decidim.default_locale => Faker::Internet.url }
       }
     end
-
-    after(:create) do |content_block, _evaluator|
-      background_image = Rack::Test::UploadedFile.new(File.expand_path(File.join(__dir__, "assets", "mov_bbb.mp4")), "application/mp4")
-      content_block.images_container.video = background_image
-      content_block.save
+    trait :with_file do
+      after(:create) do |content_block, _evaluator|
+        background_image = Rack::Test::UploadedFile.new(File.expand_path(File.join(__dir__, "assets", "mov_bbb.mp4")), "application/mp4")
+        content_block.images_container.video = background_image
+        content_block.save
+      end
     end
   end
 end

@@ -35,15 +35,15 @@ describe "Homepage", type: :system do
   end
 
   context "when has video slider" do
-    let!(:tab) { create :video_text_tab, organization: organization }
-    let!(:tab2) { create :video_text_tab, organization: organization }
+    let!(:tab) { create :video_text_tab, :with_file, organization: organization }
+    let!(:tab2) { create :video_text_tab, :with_file, organization: organization }
 
     it_behaves_like "displays video tabs"
   end
 
   context "when has video slider" do
-    let!(:tab) { create :image_tab, organization: organization }
-    let!(:tab2) { create :image_tab, organization: organization }
+    let!(:tab) { create :image_tab, :with_file, organization: organization }
+    let!(:tab2) { create :image_tab, :with_file, organization: organization }
 
     it_behaves_like "displays video tabs"
   end

@@ -3,7 +3,7 @@
 module Decidim
   module Slider
     module Admin
-      # REMOVE ME after Decidim 0.28 upgrade
+      # TODO: Remove when upgrading to Decidim 0.28
       class CreateContentBlock < Rectify::Command
         # Public: Initializes the command.
         #

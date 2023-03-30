@@ -24,7 +24,7 @@ module Decidim
         end
 
         def content_block_destroy_confirmation_text
-          "Are you sure you want to delete this tab?"
+          t("slider.edit.destroy_confirmation", scope: "decidim.admin")
         end
 
         private

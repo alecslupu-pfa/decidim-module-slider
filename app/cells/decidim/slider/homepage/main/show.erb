@@ -1,42 +1,43 @@
 <% if has_slides? %>
-  <div class="orbit" role="region" data-orbit id="slider-block">
-    <div class="orbit-wrapper">
-      <div class="orbit-controls">
-        <button class="orbit-previous"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.previous_slide") %></span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.425 38.092">
-            <path id="Path_3921" data-name="Path 3921" d="M0,.13,18.222,22.218l8.81-10.68L36.55,0" transform="translate(23.789 0.771) rotate(90)" fill="none" stroke-width="6"/>
-          </svg>
-        </button>
-        <button class="orbit-next"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.next_slide") %></span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.425 38.092">
-            <path id="Path_3922" data-name="Path 3922" d="M0,22.088,18.222,0l8.81,10.68L36.55,22.218" transform="translate(22.854 0.771) rotate(90)" fill="none" stroke-width="6"/>
-          </svg>
-        </button>
-      </div>
-      <div class="orbit-container">
-        <% slides.each_with_index do |content_block, index| %>
-          <% next unless content_block.manifest %>
-          <%= cell content_block.manifest.cell, content_block, context: { index: index } %>
-        <% end %>
+  <section class="extended home-section">
+    <div class="row">
+      <div class="column">
+
+        <div class="orbit" role="region" data-orbit id="slider-block">
+          <div class="orbit-wrapper">
+            <div class="orbit-controls">
+
+            </div>
+            <div class="orbit-container">
+              <% slides.each_with_index do |content_block, index| %>
+                <% next unless content_block.manifest %>
+                <%= cell content_block.manifest.cell, content_block, context: { index: index } %>
+              <% end %>
+            </div>
+          </div>
+          <nav class="orbit-bullets" aria-label="slider-navigation">
+            <a class="orbit-previous"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.previous_slide") %></span>
+              <%= icon "chevron-left", class: "icon--small", role: "img" %>
+            </a>
+
+            <button class="is-active pause-btn" data-slide="0">
+              <span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1) %></span>
+              <span class="show-for-sr" data-slide-active-label><%= t("decidim.slider.homepage.main.current_slide") %></span>
+            </button>
+
+            <% (1...slides.size).to_a.each do |counter| %>
+              <button data-slide="<%= counter %>"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1+counter) %></span></button>
+            <% end %>
+            <a class="orbit-next"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.next_slide") %></span>
+              <%= icon "chevron-right", class: "icon--small", role: "img" %>
+            </a>
+
+          </nav>
+        </div>
       </div>
     </div>
-    <nav class="orbit-bullets" aria-label="slider-navigation">
-      <button class="is-active pause-btn" data-slide="0">
-        <span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1) %></span>
-        <span class="show-for-sr" data-slide-active-label><%= t("decidim.slider.homepage.main.current_slide") %></span>
-      </button>
 
-      <% (1...slides.size).to_a.each do |counter| %>
-        <button data-slide="<%= counter %>"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1+counter) %></span></button>
-      <% end %>
-    </nav>
-  </div>
-  <%= stylesheet_pack_tag "decidim_slider" %>
-  <%= javascript_pack_tag "decidim_slider" %>
+    <%= stylesheet_pack_tag "decidim_slider" %>
+    <%= javascript_pack_tag "decidim_slider" %>
+  </section>
 <% end %>
-
-<script type="application/javascript">
-document.addEventListener("DOMContentLoaded", function(event) {
-
-})
-</script>

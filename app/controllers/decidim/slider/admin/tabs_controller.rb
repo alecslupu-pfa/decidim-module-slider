@@ -70,6 +70,19 @@ module Decidim
 
         private
 
+
+        def submit_button_text
+          "Save"
+        end
+
+        def content_block_create_error_text
+          "Could not create"
+        end
+
+        def content_block_create_success_text
+          "The content block has been created"
+        end
+
         def content_block_destroy_success_text
           "The content block has been successfully deleted"
         end
@@ -87,24 +100,12 @@ module Decidim
           content_block.organization.settings.upload.maximum_file_size.default = upload_size if upload_size.present? && content_block.present?
         end
 
-        def submit_button_text
-          "Save"
-        end
-
         def edit_resource_landing_page_path
           root_path
         end
 
         def resource_landing_page_content_block_path
           tab_path(params[:id])
-        end
-
-        def content_block_create_error_text
-          "Could not create"
-        end
-
-        def content_block_create_success_text
-          "The content block has been created"
         end
 
         def scoped_resource; end

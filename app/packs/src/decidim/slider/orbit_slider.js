@@ -1,5 +1,5 @@
 $(() => {
-  $(".orbit-bullets").prepend(`<button class="control" aria-label="button-control">`);
+  $(".orbit-previous").after(`<button class="control" aria-label="button-control">`);
   const plugin = $('.orbit').data("zfPlugin");
 
    $(document.body).on( "click", ".orbit-bullets > .control", function() {

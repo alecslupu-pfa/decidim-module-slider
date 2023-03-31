@@ -8,7 +8,6 @@ module Decidim
           def image_url
             model.images_container.attached_uploader(:image).path(variant: :big)
           end
-
         end
       end
     end

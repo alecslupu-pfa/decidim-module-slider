@@ -70,7 +70,6 @@ module Decidim
 
         private
 
-
         def submit_button_text
           "Save"
         end

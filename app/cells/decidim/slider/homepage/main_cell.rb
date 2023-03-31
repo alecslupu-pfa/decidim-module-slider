@@ -4,7 +4,6 @@ module Decidim
   module Slider
     module Homepage
       class MainCell < Decidim::ViewModel
-
         include Decidim::LayoutHelper
 
         def show

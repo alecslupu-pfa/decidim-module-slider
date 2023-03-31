@@ -5,7 +5,6 @@ module Decidim
     module Tabs
       module Generic
         class MainCell < Decidim::ViewModel
-
           def index
             context[:index]
           end
@@ -52,7 +51,6 @@ module Decidim
             hash.push(model.cache_key_with_version)
             hash.join(Decidim.cache_key_separator)
           end
-
         end
       end
     end

@@ -4,7 +4,7 @@ module Decidim
   module Slider
     module Admin
       # A command with all the business logic to destroy a content block
-      # REMOVE ME after Decidim 0.28 upgrade
+      # TODO: Remove when upgrading to Decidim 0.28
       class DestroyContentBlock < Rectify::Command
         # Public: Initializes the command.
         #

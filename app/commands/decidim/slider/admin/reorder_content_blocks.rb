@@ -3,7 +3,7 @@
 module Decidim
   module Slider
     module Admin
-      # Delete me when upgrading to Decidim 0.28
+      # TODO: Remove when upgrading to Decidim 0.28
       class ReorderContentBlocks < Decidim::Admin::ReorderContentBlocks
         private
 

@@ -1,21 +1,23 @@
 <div class="<% if index.zero? %>is-active<% end %> orbit-slide">
-  <figure class="orbit-figure">
+  <div class="row ">
+    <div class="column orbit-figure">
+      <div class="row small-up-1 smallmedium-up-2">
+        <div class="column text-center">
+          <img src="<%= image_url %>" alt="<%= accessibility_label %>" />
+        </div>
+        <div class="column">
+          <h2 class="heading4"><%= title %></h2>
+          <p><%= content %></p>
 
-    <div class="orbit-caption">
-      <% if content.present? || valid_link? %>
-        <%= title.presence %>
-        <% if content.present? %>
-          <div class="text-slide-wrapper">
-            <p class="orbit-text"> <%= content.presence %> </p>
-          </div>
-        <% end %>
+          <% if valid_link? %>
+            <%= link_to cta, url, class: "button action", target: "blank" %>
+          <% end %>
 
-        <% if valid_link? %>
-          <%= link_to cta, url, class: "button action" %>
-        <% end %>
-      <% end %>
+          <% if secondary_link? %>
+            <%= link_to secondary_cta, secondary_url, class: "action", target: "blank" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <div class="orbit-image" style="background: url('<%= image_url %>') 0 0 no-repeat;"></div>
-  </figure>
+  </div>
 </div>

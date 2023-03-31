@@ -4,12 +4,7 @@ module Decidim
   module Slider
     module Tabs
       module Image
-        class SettingsCell < Decidim::ViewModel
-          alias form model
-
-          def locales
-            current_organization.available_locales
-          end
+        class SettingsCell < ::Decidim::Slider::Tabs::Generic::SettingsCell
         end
       end
     end

@@ -46,6 +46,9 @@ module Decidim
             settings.attribute :content, type: :text, translated: true
             settings.attribute :cta, type: :text, translated: true, required: false
             settings.attribute :url, type: :text, translated: true, required: false
+            settings.attribute :accessibility_label, type: :text, translated: true, required: false
+            settings.attribute :secondary_cta, type: :text, translated: true, required: false
+            settings.attribute :secondary_url, type: :text, translated: true, required: false
           end
         end
       end
@@ -66,6 +69,9 @@ module Decidim
             settings.attribute :content, type: :text, translated: true
             settings.attribute :cta, type: :text, translated: true, required: false
             settings.attribute :url, type: :text, translated: true, required: false
+            settings.attribute :accessibility_label, type: :text, translated: true, required: false
+            settings.attribute :secondary_cta, type: :text, translated: true, required: false
+            settings.attribute :secondary_url, type: :text, translated: true, required: false
           end
         end
       end

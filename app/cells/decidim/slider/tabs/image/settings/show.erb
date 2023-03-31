@@ -9,8 +9,12 @@
   <%= settings_fields.translated :text_field, :content, label: t("decidim.slider.tabs.image.settings.content") %>
   <%= settings_fields.translated :text_field, :cta, label: t("decidim.slider.tabs.image.settings.cta") %>
   <%= settings_fields.translated :text_field, :url, label: t("decidim.slider.tabs.image.settings.url") %>
+  <%= settings_fields.translated :text_field, :accessibility_label, label: t("decidim.slider.tabs.image.settings.accessibility_label") %>
+  <%= settings_fields.translated :text_field, :secondary_cta, label: t("decidim.slider.tabs.image.settings.secondary_cta") %>
+  <%= settings_fields.translated :text_field, :secondary_url, label: t("decidim.slider.tabs.image.settings.secondary_url") %>
 
   <% form.fields_for :images, form.object.images do |images_fields| %>
     <%= images_fields.upload :image, label: t("decidim.slider.tabs.image.settings.image") %>
   <% end %>
 <% end %>
+<%= javascript_pack_tag "decidim_slider_admin" %>

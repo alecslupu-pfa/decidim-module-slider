@@ -18,9 +18,13 @@ FactoryBot.define do
     scope_name { :slider_tabs }
     settings do
       {
+        title: { Decidim.default_locale => generate(:title) },
         content: { Decidim.default_locale => generate(:title) },
         cta: { Decidim.default_locale => generate(:title) },
-        url: { Decidim.default_locale => Faker::Internet.url }
+        url: { Decidim.default_locale => Faker::Internet.url },
+        secondary_cta: { Decidim.default_locale => generate(:title) },
+        secondary_url: { Decidim.default_locale => Faker::Internet.url },
+        accessibility_label: { Decidim.default_locale => generate(:title) }
       }
     end
 
@@ -41,7 +45,10 @@ FactoryBot.define do
         content: { Decidim.default_locale => generate(:title) },
         title: { Decidim.default_locale => generate(:title) },
         cta: { Decidim.default_locale => generate(:title) },
-        url: { Decidim.default_locale => Faker::Internet.url }
+        url: { Decidim.default_locale => Faker::Internet.url },
+        secondary_cta: { Decidim.default_locale => generate(:title) },
+        secondary_url: { Decidim.default_locale => Faker::Internet.url },
+        accessibility_label: { Decidim.default_locale => generate(:title) }
       }
     end
     trait :with_file do

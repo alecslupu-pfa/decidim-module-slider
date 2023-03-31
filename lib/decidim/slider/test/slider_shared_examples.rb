@@ -1,21 +1,23 @@
 # frozen_string_literal: true
 
 shared_examples "displays video tabs" do
+  include Decidim::TranslationsHelper
+
   before do
     switch_to_host(organization.host)
     visit decidim.root_path
   end
 
   it "is expected to find tab elements" do
-    expect(page).to have_content(tab.settings.title["en"])
-    expect(page).to have_content(tab.settings.cta["en"])
-    expect(page).to have_content(tab.settings.content["en"])
+    expect(page).to have_content(translated(tab.settings.title))
+    expect(page).to have_content(translated(tab.settings.cta))
+    expect(page).to have_content(translated(tab.settings.content))
   end
 
   it "is expected to find second tab elements" do
-    expect(page).to have_content(tab2.settings.title["en"])
-    expect(page).to have_content(tab2.settings.cta["en"])
-    expect(page).to have_content(tab2.settings.content["en"])
+    expect(page).to have_content(translated(tab2.settings.title))
+    expect(page).to have_content(translated(tab2.settings.cta))
+    expect(page).to have_content(translated(tab2.settings.content))
   end
 
   it_behaves_like "accessible page" do

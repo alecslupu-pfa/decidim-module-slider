@@ -1,6 +1,5 @@
 ---
 en:
-
   decidim:
     admin:
       slider:
@@ -25,21 +24,21 @@ en:
       tabs:
         image:
           settings:
-            secondary_cta: Secondary Call to Action
-            secondary_url: Secondary URL
             accessibility_label: Accessibility Label
             content: Text
             cta: Call to Action
             image: Image
+            secondary_cta: Secondary Call to Action
+            secondary_url: Secondary URL
             title: Title
             url: URL
         video_text:
           settings:
-            secondary_cta: Secondary Call to Action
-            secondary_url: Secondary URL
             accessibility_label: Accessibility Label
             content: Content
             cta: Call to Action
+            secondary_cta: Secondary Call to Action
+            secondary_url: Secondary URL
             title: Title
             url: URL
             video: Video

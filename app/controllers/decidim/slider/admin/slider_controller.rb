@@ -49,7 +49,7 @@ module Decidim
           @content_blocks ||= Decidim::ContentBlock.for_scope(
             content_block_scope,
             organization: current_organization
-          ).where(scoped_resource_id: scoped_resource&.id, manifest_name: available_manifests.map(&:name))
+          ).where(scoped_resource_id: scoped_resource&.id, manifest_name: available_manifests.map(&:name)).order(:weight)
         end
 
         def inactive_blocks

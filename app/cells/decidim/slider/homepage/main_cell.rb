@@ -19,7 +19,7 @@ module Decidim
         end
 
         def slides
-          @slides ||= Decidim::ContentBlock.published.for_scope(:slider_tabs, organization: current_organization)
+          @slides ||= Decidim::ContentBlock.published.for_scope(:slider_tabs, organization: current_organization).order(:weight)
         end
         #
         # def cache_hash

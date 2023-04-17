@@ -63,6 +63,7 @@ module Decidim
               redirect_to edit_resource_landing_page_path
             end
             on(:invalid) do
+              edit # Sets the model to the view so that it can render the form
               render "edit"
             end
           end

@@ -24,7 +24,7 @@ module Decidim
         end
 
         def content_block_destroy_confirmation_text
-          t("slider.edit.destroy_confirmation", scope: "decidim.admin")
+          t("slider.slider.destroy_confirmation", scope: "decidim.admin")
         end
 
         private
@@ -73,21 +73,19 @@ module Decidim
         end
 
         def content_blocks_title
-          # t("organization_homepage.edit.title", scope: "decidim.admin")
-          "The title for Tabs"
+          t("slider.slider.title", scope: "decidim.admin")
         end
 
         def active_content_blocks_title
-          "Active Blocks"
+          t("slider.slider.active_blocks_title", scope: "decidim.admin")
         end
 
         def add_content_block_text
-          # t("organization_homepage.edit.add", scope: "decidim.admin")
-          "Add Tabs"
+          t("slider.slider.add", scope: "decidim.admin")
         end
 
         def inactive_content_blocks_title
-          "Inactive Tabs"
+          t("slider.slider.inactive_blocks_title", scope: "decidim.admin")
         end
 
         def resource_content_block_cell

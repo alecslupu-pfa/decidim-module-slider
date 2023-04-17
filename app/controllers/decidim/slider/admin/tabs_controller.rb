@@ -71,23 +71,23 @@ module Decidim
         private
 
         def submit_button_text
-          "Save"
+          t("slider.tabs.save", scope: "decidim.admin")
         end
 
         def content_block_create_error_text
-          "Could not create"
+          t("slider.tabs.create_error", scope: "decidim.admin")
         end
 
         def content_block_create_success_text
-          "The content block has been created"
+          t("slider.tabs.success_message", scope: "decidim.admin")
         end
 
         def content_block_destroy_success_text
-          "The content block has been successfully deleted"
+          t("slider.tabs.destroy_message", scope: "decidim.admin")
         end
 
         def content_block_destroy_error_text
-          "There was an error"
+          t("slider.tabs.destroy_error", scope: "decidim.admin")
         end
 
         def patch_organization

@@ -1,20 +1,40 @@
 name: Publish Gem
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
+
+env:
+  RUBY_VERSION: 2.7.6
+
 jobs:
   build:
+    name: Build + Publish
     runs-on: ubuntu-latest
-
+    permissions:
+      packages: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Release Gem
-        if: contains(github.ref, 'refs/tags/v')
-        uses: cadwallion/publish-rubygems-action@master
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: Publish to RubyGems
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          bundle install > /dev/null
+          bundle exec rake release          
+          gem build *.gemspec
+#          gem push *.gem
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
-          RELEASE_COMMAND: rake release
+          GEM_HOST_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}

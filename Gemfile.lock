@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    decidim-slider (0.26.5)
+    decidim-slider (0.0.1)
       decidim-core (= 0.26.5)
 
 GEM

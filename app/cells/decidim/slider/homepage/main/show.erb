@@ -9,10 +9,7 @@
 
             </div>
             <div class="orbit-container">
-              <% slides.each_with_index do |content_block, index| %>
-                <% next unless content_block.manifest %>
-                <%= cell content_block.manifest.cell, content_block, context: { index: index } %>
-              <% end %>
+              <%= cells.map(&:call) %>
             </div>
           </div>
           <nav class="orbit-bullets" aria-label="slider-navigation">
@@ -25,9 +22,8 @@
               <span class="show-for-sr" data-slide-active-label><%= t("decidim.slider.homepage.main.current_slide") %></span>
             </button>
 
-            <% (1...slides.size).to_a.each do |counter| %>
-              <button data-slide="<%= counter %>"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.slide_details", count: 1+counter) %></span></button>
-            <% end %>
+            <%= cells.map(&:bullet).drop(1).join("\n") %>
+
             <a class="orbit-next"><span class="show-for-sr"><%= t("decidim.slider.homepage.main.next_slide") %></span>
               <%= icon "chevron-right", class: "icon--small", role: "img" %>
             </a>

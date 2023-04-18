@@ -5,8 +5,12 @@ module Decidim
     module Tabs
       module Image
         class MainCell < ::Decidim::Slider::Tabs::Generic::MainCell
+          def uploader_name
+            :image
+          end
+
           def image_url
-            model.images_container.attached_uploader(:image).path(variant: :big)
+            asset.path(variant: :big)
           end
         end
       end

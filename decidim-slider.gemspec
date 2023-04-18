@@ -6,10 +6,10 @@ require "decidim/slider/version"
 
 Gem::Specification.new do |s|
   s.version = Decidim::Slider.version
-  s.authors = [""]
-  s.email = [""]
+  s.authors = ["Alexabdru-Emil Lupu"]
+  s.email = ["github@alecslupu.ro"]
   s.license = "AGPL-3.0"
-  s.homepage = "https://github.com/decidim/decidim-module-slider"
+  s.homepage = "https://github.com/alecslupu-pfa/decidim-module-slider/"
   s.required_ruby_version = ">= 2.7"
 
   s.name = "decidim-slider"
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
-  s.add_dependency "decidim-core", Decidim::Slider.version
+  s.add_dependency "decidim-core", Decidim::Slider.decidim_version
 end

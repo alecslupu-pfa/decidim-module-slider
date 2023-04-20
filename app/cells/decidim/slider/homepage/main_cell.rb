@@ -14,8 +14,25 @@ module Decidim
 
         private
 
+        def cells
+          return @cells if defined?(@cells)
+
+          @cells ||= []
+          index = 0
+          slides.each do |slide|
+            cl = cell(slide.manifest.cell, slide, context: { index: index })
+
+            next unless cl.renderable?
+
+            @cells.push(cl)
+            index += 1
+          end
+
+          @cells
+        end
+
         def has_slides?
-          slides.any?
+          cells.map(&:renderable?).any?
         end
 
         def slides

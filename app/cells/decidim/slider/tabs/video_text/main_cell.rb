@@ -5,12 +5,12 @@ module Decidim
     module Tabs
       module VideoText
         class MainCell < ::Decidim::Slider::Tabs::Generic::MainCell
-          def video_url
-            model.images_container.attached_uploader(:video).path
+          def uploader_name
+            :video
           end
 
-          def video_content_type
-            model.images_container.video.content_type
+          def video_url
+            asset.path
           end
         end
       end

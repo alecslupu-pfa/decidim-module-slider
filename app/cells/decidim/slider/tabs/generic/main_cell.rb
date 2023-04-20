@@ -5,6 +5,18 @@ module Decidim
     module Tabs
       module Generic
         class MainCell < Decidim::ViewModel
+          def bullet
+            return unless renderable?
+
+            render
+          end
+
+          def show
+            return unless renderable?
+
+            render
+          end
+
           def index
             context[:index]
           end
@@ -50,6 +62,18 @@ module Decidim
             hash.push(I18n.locale)
             hash.push(model.cache_key_with_version)
             hash.join(Decidim.cache_key_separator)
+          end
+
+          def asset
+            model.images_container.attached_uploader(uploader_name)
+          end
+
+          def renderable?
+            asset.attached?
+          end
+
+          def content_type
+            model.images_container.send(uploader_name).content_type
           end
         end
       end

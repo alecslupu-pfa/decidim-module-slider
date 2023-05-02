@@ -16,6 +16,8 @@ $(() => {
     }
   });
 
+  window.slidePromises = [];
+
   $("#slider-block .orbit-previous, #slider-block .orbit-next, #slider-block .orbit-bullets > button")
     .attr('tabindex', 0)
     .on('click.zf.orbit touchend.zf.orbit', function (e) {
@@ -26,11 +28,22 @@ $(() => {
     });
 
     $(".orbit").on("beforeslidechange.zf.orbit", function (event, currentSlide, newSlide) {
-        if (currentSlide.find("video").length > 0){
-            currentSlide.find("video")[0].pause();
+        var currentVideo = currentSlide[0].querySelector('video');
+        var newVideo = newSlide[0].querySelector('video');
+        if (newVideo) {
+            slidePromises[newSlide[0].dataset.slide] = newVideo.play();
         }
-        if (newSlide.find("video").length > 0){
-            newSlide.find("video")[0].play();
+
+        if (currentVideo) {
+            if (slidePromises[currentSlide[0].dataset.slide] !== undefined){
+                slidePromises[currentSlide[0].dataset.slide].then(_ => {
+                    currentVideo.pause();
+                })
+                .catch(error => {
+                    // Auto-play was prevented
+                    // Show paused UI.
+                });
+            }
         }
     });
 });

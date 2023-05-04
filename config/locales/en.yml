@@ -43,6 +43,8 @@ en:
             title: Title
             url: URL
         video_text:
+          main:
+            no_video_support: Your browser does not support the video tag.
           settings:
             accessibility_label: Accessibility Label
             content: Content

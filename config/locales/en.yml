@@ -30,6 +30,7 @@ en:
           previous_slide: Previous Slide
           slide_details: Slide Details
         settings:
+          autoplay: Autoplay
           upload_size: Upload Settings (MB)
       tabs:
         image:
@@ -45,10 +46,16 @@ en:
         video_text:
           settings:
             accessibility_label: Accessibility Label
+            autoplay: Autoplay
             content: Content
+            controls: Display Controls
             cta: Call to Action
+            loop: Loop
+            muted: Muted
+            playsinline: Play video inline
             secondary_cta: Secondary Call to Action
             secondary_url: Secondary URL
             title: Title
             url: URL
             video: Video
+            video_options: Video Options

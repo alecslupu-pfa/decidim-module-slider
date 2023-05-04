@@ -24,6 +24,7 @@ module Decidim
 
           content_block.settings do |settings|
             settings.attribute :upload_size, type: :integer, default: 500
+            settings.attribute :autoplay, type: :boolean, default: true
           end
         end
       end
@@ -72,6 +73,12 @@ module Decidim
             settings.attribute :accessibility_label, type: :text, translated: true, required: false
             settings.attribute :secondary_cta, type: :text, translated: true, required: false
             settings.attribute :secondary_url, type: :text, translated: true, required: false
+
+            settings.attribute :loop, type: :boolean, default: true
+            settings.attribute :autoplay, type: :boolean, default: true
+            settings.attribute :muted, type: :boolean, default: true
+            settings.attribute :controls, type: :boolean, default: true
+            settings.attribute :playsinline, type: :boolean, default: true
           end
         end
       end

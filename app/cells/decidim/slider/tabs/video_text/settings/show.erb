@@ -14,6 +14,16 @@
   <%= settings_fields.translated :text_field, :secondary_cta, label: t("decidim.slider.tabs.video_text.settings.secondary_cta") %>
   <%= settings_fields.translated :text_field, :secondary_url, label: t("decidim.slider.tabs.video_text.settings.secondary_url") %>
 
+  <fieldset>
+    <legend><%= t("decidim.slider.tabs.video_text.settings.video_options") %></legend>
+
+    <%= settings_fields.check_box :loop, label: t("decidim.slider.tabs.video_text.settings.loop") %>
+    <%= settings_fields.check_box :autoplay, label: t("decidim.slider.tabs.video_text.settings.autoplay") %>
+    <%= settings_fields.check_box :muted, label: t("decidim.slider.tabs.video_text.settings.muted") %>
+    <%= settings_fields.check_box :controls, label: t("decidim.slider.tabs.video_text.settings.controls") %>
+    <%= settings_fields.check_box :playsinline, label: t("decidim.slider.tabs.video_text.settings.playsinline") %>
+  </fieldset>
+
   <% form.fields_for :images, form.object.images do |images_fields| %>
     <%= images_fields.upload :video, label: t("decidim.slider.tabs.video_text.settings.video") %>
   <% end %>

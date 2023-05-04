@@ -13,7 +13,20 @@ module Decidim
             asset.path
           end
 
+          def skip_when_finished?
+            model.settings.skip_when_finished && !model.settings.loop
+          end
+
           def settings
+            [
+              video_settings,
+              skip_when_finished? ? "data-skip-when-finished" : nil
+            ].compact.join(" ")
+          end
+
+          protected
+
+          def video_settings
             {
               controls: model.settings.controls,
               autoplay: model.settings.autoplay,

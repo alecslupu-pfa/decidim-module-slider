@@ -14,6 +14,12 @@ module Decidim
 
         private
 
+        def settings
+          {
+            "data-auto-play": model.settings.autoplay
+          }.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
+        end
+
         def cells
           return @cells if defined?(@cells)
 

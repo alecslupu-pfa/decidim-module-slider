@@ -3,7 +3,7 @@
     <div class="column orbit-figure">
       <div class="row small-up-1 smallmedium-up-2">
         <div class="column text-center">
-          <video aria-label="<%= accessibility_label %>" width="512" height="270" <%= settings %>>
+          <video aria-label="<%= accessibility_label %>" width="512" height="270" <%= settings %> id="videotag<%= model.id %>">
             <source src="<%= video_url %>" type="<%= content_type %>">
             <%= t("decidim.slider.tabs.video_text.main.no_video_support") %>
           </video>

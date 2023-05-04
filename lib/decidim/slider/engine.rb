@@ -79,6 +79,8 @@ module Decidim
             settings.attribute :muted, type: :boolean, default: true
             settings.attribute :controls, type: :boolean, default: true
             settings.attribute :playsinline, type: :boolean, default: true
+
+            settings.attribute :skip_when_finished, type: :boolean, default: true
           end
         end
       end

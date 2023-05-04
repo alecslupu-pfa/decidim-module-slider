@@ -57,6 +57,7 @@ en:
             playsinline: Play video inline
             secondary_cta: Secondary Call to Action
             secondary_url: Secondary URL
+            skip_when_finished: Skip next slide when video is finished
             title: Title
             url: URL
             video: Video

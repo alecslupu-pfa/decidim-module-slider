@@ -1,4 +1,10 @@
 $(() => {
+    $("*[data-skip-when-finished]").each(function (index, elemet) {
+        elemet.addEventListener('ended', function () {
+            document.querySelector('.orbit').querySelector(".orbit-next").click();
+        });
+    });
+
     $(".orbit-previous").after(`<button class="control" aria-label="button-control">`);
     const plugin = $('.orbit').data("zfPlugin");
 

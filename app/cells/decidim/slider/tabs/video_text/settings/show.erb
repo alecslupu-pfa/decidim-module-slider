@@ -22,6 +22,7 @@
     <%= settings_fields.check_box :muted, label: t("decidim.slider.tabs.video_text.settings.muted") %>
     <%= settings_fields.check_box :controls, label: t("decidim.slider.tabs.video_text.settings.controls") %>
     <%= settings_fields.check_box :playsinline, label: t("decidim.slider.tabs.video_text.settings.playsinline") %>
+    <%= settings_fields.check_box :skip_when_finished, label: t("decidim.slider.tabs.video_text.settings.skip_when_finished") %>
   </fieldset>
 
   <% form.fields_for :images, form.object.images do |images_fields| %>

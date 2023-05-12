@@ -44,14 +44,14 @@ module Decidim
         def slides
           @slides ||= Decidim::ContentBlock.published.for_scope(:slider_tabs, organization: current_organization).order(:weight)
         end
-        #
-        # def cache_hash
-        #   hash = [I18n.locale]
-        #   slides.each do |slide|
-        #     hash.push(slide.cache_key_with_version)
-        #   end
-        #   hash.join(Decidim.cache_key_separator)
-        # end
+
+        def cache_hash
+          hash = [I18n.locale]
+          slides.each do |slide|
+            hash.push(slide.cache_key_with_version)
+          end
+          hash.join(Decidim.cache_key_separator)
+        end
       end
     end
   end

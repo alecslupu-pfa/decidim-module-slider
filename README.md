@@ -1,11 +1,14 @@
 # Decidim::Slider
 
-A Slider component for Decidim's homepage.
+A Slider for Decidim's homepage.
+
+[![Crowdin](https://badges.crowdin.net/decidim-slider/localized.svg)](https://crowdin.com/project/decidim-slider)
+
 
 ## Usage
 
-Slider will be available as a Component for a Participatory
-Space.
+Slider will be available as a Content block in the homepage section. It will be displayed as a carousel with the images and links provided in the admin panel.
+
 
 ## Installation
 

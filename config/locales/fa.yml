@@ -1,0 +1,64 @@
+---
+fa:
+  decidim:
+    admin:
+      slider:
+        slider:
+          active_blocks_title: Active Blocks
+          add: Add Tabs
+          destroy_confirmation: Are you sure you want to delete this tab?
+          inactive_blocks_title: Active Blocks
+          title: The title for Tabs
+        tabs:
+          create_error: There was an error creating the tab
+          destroy_error: There was an error deleting the tab
+          destroy_message: The tab was successfully deleted
+          save: Save
+          success_message: The tab was successfully created
+    content_blocks:
+      slider:
+        admin_menu: Homepage Slider
+        name: Slider
+        tabs:
+          image: Image
+          video_text: Video and Text
+    slider:
+      homepage:
+        main:
+          current_slide: Current Slide
+          next_slide: Next Slide
+          previous_slide: Previous Slide
+          slide_details: Slide Details
+        settings:
+          autoplay: Autoplay
+          upload_size: Upload Settings (MB)
+      tabs:
+        image:
+          settings:
+            accessibility_label: Accessibility Label
+            content: Text
+            cta: Call to Action
+            image: Image
+            secondary_cta: Secondary Call to Action
+            secondary_url: Secondary URL
+            title: Title
+            url: URL
+        video_text:
+          main:
+            no_video_support: Your browser does not support the video tag.
+          settings:
+            accessibility_label: Accessibility Label
+            autoplay: Autoplay
+            content: Content
+            controls: Display Controls
+            cta: Call to Action
+            loop: Loop
+            muted: Muted
+            playsinline: Play video inline
+            secondary_cta: Secondary Call to Action
+            secondary_url: Secondary URL
+            skip_when_finished: Skip next slide when video is finished
+            title: Title
+            url: URL
+            video: Video
+            video_options: Video Options

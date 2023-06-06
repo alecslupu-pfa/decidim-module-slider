@@ -1,13 +1,13 @@
 ---
-fr-CA:
+fr:
   decidim:
     admin:
       slider:
         slider:
-          active_blocks_title: Active Blocks
-          add: Add Tabs
-          destroy_confirmation: Are you sure you want to delete this tab?
-          inactive_blocks_title: Active Blocks
+          active_blocks_title: Blocs actifs
+          add: Ajouter un onglet
+          destroy_confirmation: Êtes-vous sûr de vouloir supprimer cet onglet ?
+          inactive_blocks_title: Blocs actifs
           title: The title for Tabs
         tabs:
           create_error: There was an error creating the tab

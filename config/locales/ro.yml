@@ -42,7 +42,7 @@ ro:
             secondary_cta: Apel secundar la acțiune
             secondary_url: URL-ul secundar
             title: Titlu
-            url: URL
+            url: Adresa URL
         video_text:
           main:
             no_video_support: Browser-ul dvs. nu suportă elementul video.
@@ -59,6 +59,6 @@ ro:
             secondary_url: URL-ul secundar
             skip_when_finished: Trecere automată la următorul slide când videoclipul s-a terminat
             title: Titlu
-            url: URL
+            url: Adresa URL
             video: Video
             video_options: Opțiuni video

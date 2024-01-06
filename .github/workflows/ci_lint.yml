@@ -8,6 +8,8 @@ on:
 
 env:
   RUBY_VERSION: 2.7.5
+  NODE_VERSION: 16.9.1
+  BUNDLE_GEMFILE: gemfiles/decidim_0.26.gemfile
 
 jobs:
   lint-report:
